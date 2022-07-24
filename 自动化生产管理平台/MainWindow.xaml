@@ -11,6 +11,6 @@
         <WindowChrome GlassFrameThickness="-1"/>
     </WindowChrome.WindowChrome>
     <Grid>
-        <TextBlock Text="jhsdfhsdf"/>
+        <TextBlock Text="test"/>
     </Grid>
-</Window>
+</Window> 
