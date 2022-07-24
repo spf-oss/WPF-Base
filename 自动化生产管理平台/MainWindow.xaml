@@ -36,7 +36,18 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Image Source="Assets/Images/Logo.png"/>
+                <StackPanel Height="30" 
+                            VerticalAlignment="Top">
+                    <StackPanel.Clip>
+                        <EllipseGeometry 
+                            Center="30 15" 
+                            RadiusX="15" 
+                            RadiusY="15"/>
+                    </StackPanel.Clip>
+                    <Image Source="Assets/Images/Logo.png" 
+                           Width="30" 
+                           Height="30"/>
+                </StackPanel>
             </Grid>
         </Border>
     </Grid>
