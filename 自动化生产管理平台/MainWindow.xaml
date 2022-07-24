@@ -13,6 +13,29 @@
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="-1"/>
     </WindowChrome.WindowChrome>
+
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="ControlButtonStyle">
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Background" Value="#11FFFFFF"/>
+            <Setter Property="FontFamily" Value="Assets/Fonts/#iconfont"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="{TemplateBinding Background}">
+                            <Border>
+                                <ContentPresenter VerticalAlignment="Center" 
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.Background>
             <RadialGradientBrush>
@@ -35,18 +58,59 @@
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-
-                <StackPanel Height="30" 
-                            VerticalAlignment="Top">
+                <!--图片显示-->
+                <StackPanel Height="40">
                     <StackPanel.Clip>
-                        <EllipseGeometry 
-                            Center="30 15" 
-                            RadiusX="15" 
-                            RadiusY="15"/>
+                        <EllipseGeometry Center="30 20"
+                                         RadiusX="20"
+                                         RadiusY="20"/>
                     </StackPanel.Clip>
+                    
                     <Image Source="Assets/Images/Logo.png" 
-                           Width="30" 
-                           Height="30"/>
+                           Width="40" 
+                           Height="40"/>
+                    
+                </StackPanel>
+                
+                <!--标题显示-->
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="自动化生产管理平台" 
+                               Foreground="White" 
+                               FontSize="16"/>
+                    
+                    <TextBlock Margin="0 5 0 0"
+                               Text="曾梦想仗剑走天涯，看一看世间的繁华！" 
+                               Foreground="#cccccc"/>
+                </StackPanel>
+
+                <!--最大化最小化图标显示-->
+                <StackPanel Grid.Column="2">
+                    <Border HorizontalAlignment="Right"
+                            WindowChrome.IsHitTestVisibleInChrome="True"
+                            Background="Transparent">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="13"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel  HorizontalAlignment="Right"  
+                                     VerticalAlignment="Top" 
+                                     Orientation="Horizontal">
+                                
+                                <Button Content="&#xe615;" 
+                                    Style="{StaticResource ControlButtonStyle}"/>
+                                
+                                <Button Content="&#xe616;" 
+                                    Style="{StaticResource ControlButtonStyle}"/>
+                                
+                                <Button Content="&#xe61c;" 
+                                    Background="DarkRed"
+                                    Style="{StaticResource ControlButtonStyle}"/>
+                                
+                            </StackPanel>
+                        </Grid>
+                    </Border>
                 </StackPanel>
             </Grid>
         </Border>
