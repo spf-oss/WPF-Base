@@ -18,19 +18,31 @@
         <Style TargetType="Button" x:Key="ControlButtonStyle">
             <Setter Property="Width" Value="40"/>
             <Setter Property="Height" Value="40"/>
-            <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontSize" Value="30"/>
+            <Setter Property="Foreground" Value="White"/>
             <Setter Property="Background" Value="#11FFFFFF"/>
             <Setter Property="FontFamily" Value="Assets/Fonts/#iconfont"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Grid Background="{TemplateBinding Background}">
-                            <Border>
-                                <ContentPresenter VerticalAlignment="Center" 
-                                                  HorizontalAlignment="Center"/>
+                            <Border x:Name="root">
+                                <TextBlock x:Name="content" 
+                                           VerticalAlignment="Center" 
+                                           HorizontalAlignment="Center">
+                                    <ContentPresenter/>
+                                </TextBlock>
                             </Border>
                         </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="root" Property="Background" Value="#33ffffff"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="content" Property="Foreground" Value="Red"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
