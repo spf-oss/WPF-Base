@@ -5,12 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:自动化生产管理平台"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow"
+        Height="450"
+        Width="800"
+        Background="Transparent"
         WindowStartupLocation="CenterScreen">
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="-1"/>
     </WindowChrome.WindowChrome>
     <Grid>
-        <TextBlock Text="&#xe60f;" FontSize="100" FontFamily="Assets/Fonts/#iconfont"/>
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="#FF285177" Offset="0"/>
+                <GradientStop Color="#FF244967" Offset="0.3"/>
+                <GradientStop Color="#FF14273A" Offset="1"/>
+            </RadialGradientBrush>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <Border BorderBrush="#5518AABD" BorderThickness="0 0 0 1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="Assets/Images/Logo.png"/>
+            </Grid>
+        </Border>
     </Grid>
 </Window> 
