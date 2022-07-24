@@ -11,6 +11,6 @@
         <WindowChrome GlassFrameThickness="-1"/>
     </WindowChrome.WindowChrome>
     <Grid>
-        
+        <TextBlock Text="&#xe60f;" FontSize="100" FontFamily="Assets/Fonts/#iconfont"/>
     </Grid>
 </Window> 
