@@ -17,6 +17,7 @@
     <Window.Resources>
         <Style TargetType="Button" x:Key="ControlButtonStyle">
             <Setter Property="Width" Value="40"/>
+            <Setter Property="Width" Value="40"/>
             <Setter Property="Height" Value="40"/>
             <Setter Property="FontSize" Value="30"/>
             <Setter Property="Foreground" Value="White"/>
@@ -58,7 +59,7 @@
         </Grid.Background>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="45"/>
+            <RowDefinition Height="60"/>
             <RowDefinition/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
@@ -88,7 +89,8 @@
                 <StackPanel Grid.Column="1">
                     <TextBlock Text="自动化生产管理平台" 
                                Foreground="White" 
-                               FontSize="16"/>
+                               Margin="0 5 0 5"
+                               FontSize="20"/>
                     
                     <TextBlock Margin="0 5 0 0"
                                Text="曾梦想仗剑走天涯，看一看世间的繁华！" 
@@ -98,14 +100,10 @@
                 <!--最大化最小化图标显示-->
                 <StackPanel Grid.Column="2">
                     <Border HorizontalAlignment="Right"
+                            Height="40"
                             WindowChrome.IsHitTestVisibleInChrome="True"
+                            
                             Background="Transparent">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition/>
-                                <RowDefinition Height="13"/>
-                            </Grid.RowDefinitions>
-
                             <StackPanel  HorizontalAlignment="Right"  
                                      VerticalAlignment="Top" 
                                      Orientation="Horizontal">
@@ -121,7 +119,29 @@
                                     Style="{StaticResource ControlButtonStyle}"/>
                                 
                             </StackPanel>
-                        </Grid>
+                    </Border>
+
+                    <Border Height="15"
+                            Margin="0 3 0 3"
+                            BorderThickness="0 1 0 0"
+                            BorderBrush="#5518AABD">
+                        <Border.Background>
+                            <VisualBrush TileMode="Tile" 
+                                         Viewport="0,0,7,7" 
+                                         ViewportUnits="Absolute">
+                                <VisualBrush.Visual>
+                                    <Grid Width="20"
+                                          Height="20">
+                                        <Line X1="0" 
+                                              X2="10" 
+                                              Y1="10" 
+                                              Y2="0" 
+                                              Stroke="Gray" 
+                                              StrokeThickness="1"/>
+                                    </Grid>
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Border.Background>
                     </Border>
                 </StackPanel>
             </Grid>
