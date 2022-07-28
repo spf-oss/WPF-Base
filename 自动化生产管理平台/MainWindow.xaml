@@ -102,7 +102,6 @@
                     <Border HorizontalAlignment="Right"
                             Height="40"
                             WindowChrome.IsHitTestVisibleInChrome="True"
-                            
                             Background="Transparent">
                             <StackPanel  HorizontalAlignment="Right"  
                                      VerticalAlignment="Top" 
@@ -121,8 +120,8 @@
                             </StackPanel>
                     </Border>
 
-                    <Border Height="15"
-                            Margin="0 3 0 3"
+                    <Border Margin="0 5"
+                            Height="10"
                             BorderThickness="0 1 0 0"
                             BorderBrush="#5518AABD">
                         <Border.Background>
@@ -144,6 +143,47 @@
                         </Border.Background>
                     </Border>
                 </StackPanel>
+            </Grid>
+        </Border>
+        
+        <!--内容部分-->
+        <ContentControl Grid.Row="1" Content=""/>
+        
+        <!--状态栏部分-->
+        <Border Grid.Row="2" 
+                BorderBrush="#5518AABD" 
+                BorderThickness="0 1 0 0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" Margin="0 5">
+                    <Border.Background>
+                        <VisualBrush TileMode="Tile" 
+                                         Viewport="0,0,7,7" 
+                                         ViewportUnits="Absolute">
+                            <VisualBrush.Visual>
+                                <Grid Width="20"
+                                          Height="20">
+                                    <Line X1="0" 
+                                              X2="10" 
+                                              Y1="10" 
+                                              Y2="0" 
+                                              Stroke="Gray" 
+                                              StrokeThickness="1"/>
+                                </Grid>
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </Border.Background>
+                </Border>
+
+                <TextBlock Grid.Column="1" 
+                           Text="我是底部的状态文字,不知道要显示什么内容！！"
+                           Foreground="DarkRed"
+                           Margin="10 2"
+                           />
             </Grid>
         </Border>
     </Grid>
