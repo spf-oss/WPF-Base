@@ -18,6 +18,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
 
             <StackPanel Orientation="Horizontal"
@@ -45,6 +46,21 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
                         Margin="20 0 0 0">
+                
+                <StackPanel.Resources>
+                    <DataTemplate x:Key="dateTemplate">
+                        <Border Width="15"
+                                    Margin="2 0"
+                                    Background="#3318AABD">
+
+                            <TextBlock Text="{Binding}" 
+                                           Foreground="White"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                        </Border>
+                    </DataTemplate>
+                </StackPanel.Resources>
+                
                 <TextBlock Text="&#xe611;"
                            FontSize="30"
                            Foreground="#55FFFFFF"
@@ -57,25 +73,53 @@
                            Foreground="#55FFFFFF"
                            VerticalAlignment="Center"/>
 
-                <ItemsControl ItemsSource="{Binding Total}">
+                <ItemsControl ItemsSource="{Binding Total}" 
+                              ItemTemplate="{StaticResource dateTemplate}">
+                    
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <VirtualizingStackPanel Orientation="Horizontal"/>
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
+                </ItemsControl>
 
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <Border Width="15"
-                                    Background="#3318AABD"
-                                    Margin="2 0">
-                                <TextBlock Text="{Binding}"/>
-                                
-                            </Border>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
+                <TextBlock Text="生产计数" 
+                           Margin="20 0 10 0"
+                           Foreground="#99FFFFFF" 
+                           VerticalAlignment="Center"/>
+
+                <ItemsControl ItemsSource="{Binding ProductionCount}"
+                              ItemTemplate="{StaticResource dateTemplate}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+
+                <TextBlock Text="不良计数" 
+                           Margin="20 0 10 0"
+                           Foreground="#99FFFFFF" 
+                           VerticalAlignment="Center"/>
+
+                <ItemsControl ItemsSource="{Binding BadCount}"
+                              ItemTemplate="{StaticResource dateTemplate}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
                 </ItemsControl>
             </StackPanel>
+
+            <Button Grid.Column="2" 
+                    Content="配置"
+                    Style="{StaticResource ButtonStyle}"
+                    Tag="&#xe61a;"
+                    Height="30"
+                    Margin="0 0 10 0"
+                    Width="100"/>
         </Grid>
+
     </Grid>
 </UserControl>

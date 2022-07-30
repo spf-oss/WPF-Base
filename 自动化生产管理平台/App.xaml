@@ -4,6 +4,47 @@
              xmlns:local="clr-namespace:自动化生产管理平台"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="#AAA"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border BorderThickness="1"
+                                Name="border"
+                                Background="Transparent">
+                            <Border.BorderBrush>
+                                <LinearGradientBrush 
+                                    StartPoint="0 0" 
+                                    EndPoint="1 0">
+                                    <GradientStop Color="#22FFFFFF" Offset="0"/>
+                                    <GradientStop Color="#22FFFFFF" Offset="0.5"/>
+                                    <GradientStop Color="#22FFFFFF" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.BorderBrush>
+
+                            <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center">
+                                
+                                <TextBlock Text="{TemplateBinding Tag}"
+                                           FontSize="16"
+                                           Margin="0 2 5 0"
+                                           
+                                           FontFamily="Assets/Fonts/#iconfont"/>
+                                
+                                <TextBlock Text="{TemplateBinding Content}"
+                                           FontSize="16"/>
+                            </StackPanel>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#11FFFFFF" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>
