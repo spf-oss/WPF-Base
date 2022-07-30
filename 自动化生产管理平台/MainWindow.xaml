@@ -147,7 +147,9 @@
         </Border>
         
         <!--内容部分-->
-        <ContentControl Grid.Row="1" Content="{Binding PageContent}"/>
+        <ContentControl Grid.Row="1" 
+                        Content="{Binding PageContent}" 
+                        DataContext="{Binding}"/>
         
         <!--状态栏部分-->
         <Border Grid.Row="2" 
@@ -182,8 +184,7 @@
                 <TextBlock Grid.Column="1" 
                            Text="我是底部的状态文字,不知道要显示什么内容！！"
                            Foreground="DarkRed"
-                           Margin="10 2"
-                           />
+                           Margin="10 2"/>
             </Grid>
         </Border>
     </Grid>

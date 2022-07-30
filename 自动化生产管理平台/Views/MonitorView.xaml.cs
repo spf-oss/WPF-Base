@@ -23,6 +23,8 @@ namespace 自动化生产管理平台
         public MonitorView()
         {
             InitializeComponent();
+
+            //this.DataContext = new MonitorViewModel();
         }
     }
 }

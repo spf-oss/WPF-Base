@@ -28,7 +28,7 @@ namespace 自动化生产管理平台
 
             _mainViewModel.PageContent = new MonitorView();
 
-            this.DataContext = _mainViewModel;  
+            this.DataContext = _mainViewModel;
         }
     }
 }
