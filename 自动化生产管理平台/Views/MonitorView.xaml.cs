@@ -16,19 +16,13 @@ using System.Windows.Shapes;
 namespace 自动化生产管理平台
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// MonitorView.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MonitorView : UserControl
     {
-        private readonly MainViewModel _mainViewModel = new();
-
-        public MainWindow()
+        public MonitorView()
         {
             InitializeComponent();
-
-            _mainViewModel.PageContent = new MonitorView();
-
-            this.DataContext = _mainViewModel;  
         }
     }
 }

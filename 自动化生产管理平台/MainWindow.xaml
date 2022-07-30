@@ -147,7 +147,7 @@
         </Border>
         
         <!--内容部分-->
-        <ContentControl Grid.Row="1" Content=""/>
+        <ContentControl Grid.Row="1" Content="{Binding PageContent}"/>
         
         <!--状态栏部分-->
         <Border Grid.Row="2" 
