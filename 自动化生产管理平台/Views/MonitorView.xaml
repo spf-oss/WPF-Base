@@ -233,7 +233,7 @@
                 </GroupBox>
                 
                 <GroupBox Header="产能">
-                    <TextBlock Text="产能内容"/>
+                    <TextBlock Text="产能内容222"/>
                 </GroupBox>
                 
                 <GroupBox Header="质量">
