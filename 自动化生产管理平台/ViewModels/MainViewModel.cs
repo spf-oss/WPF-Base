@@ -12,6 +12,7 @@ namespace 自动化生产管理平台
         private string _total = String.Empty;
         private string _productionCount = String.Empty;
         private string _badCount = String.Empty;
+        public List<MonitorItemModel> Evironment { get; set; }
 
         public object? PageContent { get => _pageContent; set => SetProperty(ref _pageContent, value); }
         public string Total { get => _total; set => SetProperty(ref _total, value); }
@@ -25,6 +26,15 @@ namespace 自动化生产管理平台
             this.BadCount = 111.ToString("000");
 
             this.ProductionCount = 1998.ToString("0000");
+
+            this.Evironment = new List<MonitorItemModel>();
+            this.Evironment.Add(new MonitorItemModel() { Header = "光照（Lux）" });
+            this.Evironment.Add(new MonitorItemModel() { Header = "噪音（db）" });
+            this.Evironment.Add(new MonitorItemModel() { Header = "温度（℃）" });
+            this.Evironment.Add(new MonitorItemModel() { Header = "湿度" });
+            this.Evironment.Add(new MonitorItemModel() { Header = "PM2.5" });
+            this.Evironment.Add(new MonitorItemModel() { Header = "硫化氢（ppm）" });
+            this.Evironment.Add(new MonitorItemModel() { Header = "氮气（ppm）" });
         }
     }
 }

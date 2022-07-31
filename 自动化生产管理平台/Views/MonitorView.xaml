@@ -229,11 +229,35 @@
             <!--第一列-->
             <UniformGrid Columns="1" Margin="10 0">
                 <GroupBox Header="环境">
-                    <TextBlock Text="内容"/>
+                    <ItemsControl ItemsSource="{Binding Evironment}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Columns="4"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel HorizontalAlignment="Center"
+                                            VerticalAlignment="Center">
+                                    
+                                    <TextBlock Text="{Binding Value}"
+                                               Margin="0 5"
+                                               FontSize="16"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Foreground="Aqua"/>
+                                    
+                                    <TextBlock Text="{Binding Header}"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Foreground="White"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
                 </GroupBox>
                 
                 <GroupBox Header="产能">
-                    <TextBlock Text="产能内容111"/>
                 </GroupBox>
                 
                 <GroupBox Header="质量">
@@ -243,7 +267,7 @@
 
             <!--第二列-->
             <StackPanel Grid.Column="1"/>
-
+                
             <!--第三列-->
             <UniformGrid Columns="1" Grid.Column="2">
                 <GroupBox Header="环境">
