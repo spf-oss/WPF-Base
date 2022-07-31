@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              xmlns:local="clr-namespace:自动化生产管理平台"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
@@ -258,6 +259,38 @@
                 </GroupBox>
                 
                 <GroupBox Header="产能">
+                    <lvc:CartesianChart>
+                        <lvc:CartesianChart.Series>
+                            <lvc:ColumnSeries Values="300,400,480,450,380,450,450,330,340,280,220"
+                                              MaxColumnWidth="10"
+                                              Title="生产计数">
+                                <lvc:ColumnSeries.Fill>
+                                    <LinearGradientBrush StartPoint="0 0" 
+                                                         EndPoint="0 1">
+                                        <GradientStop Color="#FF3FBBE6" Offset="0"/>
+                                        <GradientStop Color="#FF2BEDF1" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </lvc:ColumnSeries.Fill>
+                                
+                            </lvc:ColumnSeries>
+
+                            <lvc:ColumnSeries Values="15,55,15,40,38,45,25,15"
+                                              MaxColumnWidth="10"
+                                              Title="不良计数">
+                                <lvc:ColumnSeries.Fill>
+                                    <LinearGradientBrush StartPoint="0 0"
+                                                         EndPoint="0 1">
+                                        <GradientStop Color="#FFFB9A9A" Offset="0"/>
+                                        <GradientStop Color="#FFFF5151" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </lvc:ColumnSeries.Fill>
+                            </lvc:ColumnSeries>
+                        </lvc:CartesianChart.Series>
+
+                        <lvc:CartesianChart.AxisX>
+                            <lvc:Axis Labels=""/>
+                        </lvc:CartesianChart.AxisX>
+                    </lvc:CartesianChart>
                 </GroupBox>
                 
                 <GroupBox Header="质量">
