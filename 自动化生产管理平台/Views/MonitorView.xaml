@@ -366,8 +366,128 @@
             </UniformGrid>
 
             <!--第二列-->
-            <StackPanel Grid.Column="1"/>
-                
+            <Grid Grid.Column="1" Name="grid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="120"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border Width="800"
+                        Height="150"
+                        Grid.RowSpan="2"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Center"
+                        Background="Red">
+                </Border>
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Foreground="White"
+                               FontSize="20"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Left">
+                        
+                        <Run Text="&#xe61b;" FontFamily="../Assets/Fonts/#iconfont"/>
+                        
+                        <Run Text="报警记录"/>
+                    </TextBlock>
+
+                    <ItemsControl Grid.Row="1" ItemsSource="{Binding AlarmItemModels}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20"/>
+                                        <ColumnDefinition Width="30"/>
+                                        <ColumnDefinition Width="1.3*"/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="0.5*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Border Width="6" 
+                                            Height="6" 
+                                            Background="IndianRed" 
+                                            CornerRadius="3" 
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Center"/>
+
+                                    <TextBlock Text="{Binding Num}" 
+                                               Grid.Column="1"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Foreground="#992bEDF1"
+                                               FontWeight="Normal"/>
+
+                                    <TextBlock Text="{Binding Message}" 
+                                               HorizontalAlignment="Left"
+                                               VerticalAlignment="Center"
+                                               Grid.Column="2"
+                                               Foreground="#992bEDF1"/>
+
+                                    <TextBlock Text="{Binding Time}" 
+                                               HorizontalAlignment="Left"
+                                               VerticalAlignment="Center"
+                                               Grid.Column="3"
+                                               Foreground="#992bEDF1"/>
+
+                                    <TextBlock Text="{Binding Len}" 
+                                               HorizontalAlignment="Left"
+                                               VerticalAlignment="Center"
+                                               Grid.Column="4"
+                                               Foreground="#992bEDF1"/>
+
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Grid>
+
+                <GroupBox Grid.Row="2" 
+                          Header="数据异常报警比例">
+                    <lvc:PieChart InnerRadius="45" Margin="0 40 0 20">
+                        <lvc:PieChart.Series>
+                            <lvc:PieSeries Values="20" 
+                                           StrokeThickness="0" 
+                                           LabelPosition="OutsideSlice"
+                                           DataLabels="True"
+                                           Title="压差"/>
+
+                            <lvc:PieSeries Values="20" 
+                                           StrokeThickness="0" 
+                                           LabelPosition="OutsideSlice"
+                                           DataLabels="True"
+                                           Title="温度"/>
+                            
+                            <lvc:PieSeries Values="20" 
+                                           StrokeThickness="0" 
+                                           LabelPosition="OutsideSlice"
+                                           DataLabels="True"
+                                           Title="震动"/>
+                            
+                            <lvc:PieSeries Values="20" 
+                                           StrokeThickness="0" 
+                                           LabelPosition="OutsideSlice"
+                                           DataLabels="True"
+                                           Title="气压"/>
+                            
+                            <lvc:PieSeries Values="20" 
+                                           StrokeThickness="0" 
+                                           LabelPosition="OutsideSlice"
+                                           DataLabels="True"
+                                           Title="光照"/>
+
+                        </lvc:PieChart.Series>
+                    </lvc:PieChart>
+                    
+                    
+                </GroupBox>
+            </Grid>
+
             <!--第三列-->
             <UniformGrid Columns="1" Grid.Column="2">
                 <GroupBox Header="环境">
