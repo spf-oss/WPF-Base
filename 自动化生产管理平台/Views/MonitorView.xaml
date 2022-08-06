@@ -259,38 +259,74 @@
                 </GroupBox>
                 
                 <GroupBox Header="产能">
-                    <lvc:CartesianChart>
-                        <lvc:CartesianChart.Series>
-                            <lvc:ColumnSeries Values="300,400,480,450,380,450,450,330,340,280,220"
+                    <Grid>
+                        <lvc:CartesianChart Margin="20 35 20 25">
+                            <lvc:CartesianChart.Series>
+                                <lvc:ColumnSeries Values="300,400,480,450,380,450,450,330,340,280,220"
                                               MaxColumnWidth="10"
                                               Title="生产计数">
-                                <lvc:ColumnSeries.Fill>
-                                    <LinearGradientBrush StartPoint="0 0" 
+                                    <lvc:ColumnSeries.Fill>
+                                        <LinearGradientBrush StartPoint="0 0" 
                                                          EndPoint="0 1">
-                                        <GradientStop Color="#FF3FBBE6" Offset="0"/>
-                                        <GradientStop Color="#FF2BEDF1" Offset="1"/>
-                                    </LinearGradientBrush>
-                                </lvc:ColumnSeries.Fill>
-                                
-                            </lvc:ColumnSeries>
+                                            <GradientStop Color="#FF3FBBE6" Offset="0"/>
+                                            <GradientStop Color="#FF2BEDF1" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </lvc:ColumnSeries.Fill>
 
-                            <lvc:ColumnSeries Values="15,55,15,40,38,45,25,15"
+                                </lvc:ColumnSeries>
+
+                                <lvc:ColumnSeries Values="15,55,15,40,38,45,25,15"
                                               MaxColumnWidth="10"
                                               Title="不良计数">
-                                <lvc:ColumnSeries.Fill>
-                                    <LinearGradientBrush StartPoint="0 0"
+                                    <lvc:ColumnSeries.Fill>
+                                        <LinearGradientBrush StartPoint="0 0"
                                                          EndPoint="0 1">
-                                        <GradientStop Color="#FFFB9A9A" Offset="0"/>
-                                        <GradientStop Color="#FFFF5151" Offset="1"/>
-                                    </LinearGradientBrush>
-                                </lvc:ColumnSeries.Fill>
-                            </lvc:ColumnSeries>
-                        </lvc:CartesianChart.Series>
+                                            <GradientStop Color="#FFFB9A9A" Offset="0"/>
+                                            <GradientStop Color="#FFFF5151" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </lvc:ColumnSeries.Fill>
+                                </lvc:ColumnSeries>
+                            </lvc:CartesianChart.Series>
 
-                        <lvc:CartesianChart.AxisX>
-                            <lvc:Axis Labels=""/>
-                        </lvc:CartesianChart.AxisX>
-                    </lvc:CartesianChart>
+                            <lvc:CartesianChart.AxisX>
+                                <lvc:Axis Labels="8:00,9:00,10:00,11:00,12:00,13:00,14:00,15:00,16:00,17:00,18:00">
+                                    <lvc:Axis.Separator>
+                                        <lvc:Separator Step="1" StrokeThickness="0"/>
+                                    </lvc:Axis.Separator>
+                                </lvc:Axis>
+                            </lvc:CartesianChart.AxisX>
+                            <lvc:CartesianChart.AxisY>
+                                <lvc:Axis MinValue="0" MaxValue="500">
+                                    <lvc:Axis.Separator>
+                                        <lvc:Separator Step="100" Stroke="#11FFFFFF"/>
+                                    </lvc:Axis.Separator>
+                                </lvc:Axis>
+                            </lvc:CartesianChart.AxisY>
+                        </lvc:CartesianChart>
+
+                        <StackPanel Orientation="Horizontal"
+                                    VerticalAlignment="Top"
+                                    HorizontalAlignment="Right"
+                                    Margin="10 20">
+                            
+                            <Border Width="6" 
+                                    Height="6" 
+                                    Background="Red" 
+                                    Margin="5 0"/>
+                            
+                            <TextBlock Text="生产计数" 
+                                       Foreground="White"/>
+                            
+                            <Border Width="6" 
+                                    Height="6" 
+                                    Background="Blue" 
+                                    Margin="5 0"/>
+                            
+                            <TextBlock Text="生产计数" 
+                                       Foreground="White"/>
+                        </StackPanel>
+                    </Grid>
+
                 </GroupBox>
                 
                 <GroupBox Header="质量">
