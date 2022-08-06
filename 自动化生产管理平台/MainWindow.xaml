@@ -22,7 +22,7 @@
             <Setter Property="FontSize" Value="30"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Background" Value="#11FFFFFF"/>
-            <Setter Property="FontFamily" Value="Assets/Fonts/#iconfont"/>
+            <Setter Property="FontFamily" Value="{DynamicResource FontFamilyBase}"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">

@@ -162,7 +162,7 @@
                 <TextBlock Text="&#xe611;"
                            FontSize="30"
                            Foreground="#55FFFFFF"
-                           FontFamily="../Assets/Fonts/#iconfont"
+                           FontFamily="{StaticResource FontFamilyBase}"
                            VerticalAlignment="Center"/>
 
                 <TextBlock Text="机台&#13;总数"
@@ -263,12 +263,14 @@
                         <lvc:CartesianChart Margin="20 35 20 25">
                             <lvc:CartesianChart.Series>
                                 <lvc:ColumnSeries Values="300,400,480,450,380,450,450,330,340,280,220"
-                                              MaxColumnWidth="10"
-                                              Title="生产计数">
+                                                  MaxColumnWidth="10"
+                                                  Title="生产计数">
                                     <lvc:ColumnSeries.Fill>
                                         <LinearGradientBrush StartPoint="0 0" 
-                                                         EndPoint="0 1">
+                                                             EndPoint="0 1">
+                                            
                                             <GradientStop Color="#FF3FBBE6" Offset="0"/>
+                                            
                                             <GradientStop Color="#FF2BEDF1" Offset="1"/>
                                         </LinearGradientBrush>
                                     </lvc:ColumnSeries.Fill>
@@ -276,12 +278,14 @@
                                 </lvc:ColumnSeries>
 
                                 <lvc:ColumnSeries Values="15,55,15,40,38,45,25,15"
-                                              MaxColumnWidth="10"
-                                              Title="不良计数">
+                                                  MaxColumnWidth="10"
+                                                  Title="不良计数">
                                     <lvc:ColumnSeries.Fill>
                                         <LinearGradientBrush StartPoint="0 0"
-                                                         EndPoint="0 1">
+                                                             EndPoint="0 1">
+                                            
                                             <GradientStop Color="#FFFB9A9A" Offset="0"/>
+                                            
                                             <GradientStop Color="#FFFF5151" Offset="1"/>
                                         </LinearGradientBrush>
                                     </lvc:ColumnSeries.Fill>
@@ -392,7 +396,7 @@
                                VerticalAlignment="Center"
                                HorizontalAlignment="Left">
                         
-                        <Run Text="&#xe61b;" FontFamily="../Assets/Fonts/#iconfont"/>
+                        <Run Text="&#xe61b;" FontFamily="{DynamicResource FontFamilyBase}"/>
                         
                         <Run Text="报警记录"/>
                     </TextBlock>
