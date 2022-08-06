@@ -330,7 +330,38 @@
                 </GroupBox>
                 
                 <GroupBox Header="质量">
-                    
+                    <lvc:CartesianChart Margin="20 35 20 25">
+                            <lvc:CartesianChart.Series>
+                                <lvc:LineSeries Values="15,55,15,40,38,45,25,15"
+                                                Title="不良计数"
+                                                PointGeometrySize="0"
+                                                Stroke="Aqua"
+                                                StrokeThickness="1">
+                                    <lvc:LineSeries.Fill>
+                                        <LinearGradientBrush StartPoint="0 0"
+                                                             EndPoint="0 1">
+                                        <GradientStop Color="Aquamarine" Offset="0"/>
+                                            <GradientStop Color="Transparent" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </lvc:LineSeries.Fill>
+                                </lvc:LineSeries>
+                            </lvc:CartesianChart.Series>
+
+                            <lvc:CartesianChart.AxisX>
+                                <lvc:Axis Labels="8:00,9:00,10:00,11:00,12:00,13:00,14:00,15:00,16:00,17:00,18:00">
+                                    <lvc:Axis.Separator>
+                                        <lvc:Separator Step="1" StrokeThickness="0"/>
+                                    </lvc:Axis.Separator>
+                                </lvc:Axis>
+                            </lvc:CartesianChart.AxisX>
+                            <lvc:CartesianChart.AxisY>
+                                <lvc:Axis MinValue="0" MaxValue="60">
+                                    <lvc:Axis.Separator>
+                                        <lvc:Separator Step="10" Stroke="#11FFFFFF"/>
+                                    </lvc:Axis.Separator>
+                                </lvc:Axis>
+                            </lvc:CartesianChart.AxisY>
+                        </lvc:CartesianChart>
                 </GroupBox>
             </UniformGrid>
 
